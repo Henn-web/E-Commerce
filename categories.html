@@ -150,15 +150,47 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Mobile Menu Toggle -->
-    <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
+   	<!-- JavaScript for Mobile Menu Toggle -->
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+
+    <!-- Script Vue.js -->
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                email: '',
+                password: '',
+                rememberMe: false,
+                isMenuOpen: false
+            },
+            methods: {
+                toggleMenu() {
+                    this.isMenuOpen = !this.isMenuOpen;
+                },
+                login() {
+                    // Contoh logika untuk memverifikasi kredensial
+                    const validEmail = 'user@example.com'; // Ganti dengan email valid
+                    const validPassword = 'password123'; // Ganti dengan kata sandi valid
+
+                    if (this.email === validEmail && this.password === validPassword) {
+                        alert('Login berhasil! Selamat datang, ' + this.email + '!');
+                        localStorage.setItem('userEmail', this.email); // Simpan email di localStorage
+                        window.location.href = 'index.html'; // Ubah ini ke URL redirect yang diinginkan
+                    } else {
+                        alert('Email atau kata sandi salah. Silakan coba lagi.');
+                    }
+                }
+            }
         });
     </script>
+
 </body>
 
 </html>

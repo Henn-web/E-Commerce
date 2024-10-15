@@ -28,18 +28,35 @@
                 <a href="contact.html" class="text-gray-800 hover:text-blue-600">Contact</a>
             </nav>
 
-            <!-- Cart & Login (Desktop) -->
-            <div class="hidden md:flex space-x-4">
-                <a href="login.html" class="text-gray-800 hover:text-blue-600">Login</a>
-                <a href="cart.html" class="text-gray-800 hover:text-blue-600">Cart(0)</a>
-            </div>
+                     <!-- Cart & Login (Desktop) -->
+<div class="hidden md:flex space-x-4">
+    <a href="login.html" class="text-gray-800 hover:text-blue-600">Login</a>
+    <a href="cart.html" class="text-gray-800 hover:text-blue-600">
+        <i class="fas fa-shopping-cart"></i>
+        <span>(0)</span>
+    </a>
+</div>
+
+<!-- Mobile Navigation Menu (for Cart) -->
+<nav id="mobile-menu" class="hidden md:hidden flex-col bg-white border-t border-gray-200 p-4">
+    <a href="index.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100">Home</a>
+    <a href="shop.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100">Shop</a>
+    <a href="categories.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100">Categories</a>
+    <a href="contact.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100">Contact</a>
+    <a href="login.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100">Login</a>
+    <a href="cart.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100">
+        <i class="fas fa-shopping-cart"></i>
+        <span>(0)</span>
+    </a>
+</nav>
+
 
             <!-- Hamburger Menu Button (Mobile) -->
-            <button id="menu-toggle" class="text-gray-800 md:hidden focus:outline-none">
-                <!-- Three dots menu icon -->
-                <i class="fas fa-ellipsis-v fa-lg"></i>
-            </button>
-        </div>
+<button id="menu-toggle" class="text-gray-800 md:hidden focus:outline-none">
+    <!-- Ganti tiga titik dengan ikon garis tiga (burger menu) -->
+    <i class="fas fa-bars fa-lg"></i>
+</button>
+
 
         <!-- Mobile Navigation Menu -->
         <nav id="mobile-menu" class="hidden md:hidden flex-col bg-white border-t border-gray-200 p-4">

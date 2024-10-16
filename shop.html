@@ -143,7 +143,7 @@
                     <h3 class="font-bold text-lg mb-4">E-Shop</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, nostrum!</p>
                 </div>
-                <<!-- Footer Section 2 -->
+                <!-- Footer Section 2 -->
                 <div>
                     <h3 class="font-bold text-lg mb-4">Quick Links</h3>
                     <ul>
@@ -168,7 +168,7 @@
                     <h3 class="font-bold text-lg mb-4">Newsletter</h3>
                     <p>Subscribe to get the latest news and updates.</p>
                     <input type="email" placeholder="Enter your email" class="w-full mt-4 p-2 rounded-lg text-gray-800">
-                    <button class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-500 transition">
+                    <button class="bg-green-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-green-400 transition">
                         Subscribe
                     </button>
                 </div>
@@ -179,50 +179,17 @@
         </div>
     </footer>
 
-  	<!-- JavaScript for Mobile Menu Toggle -->
-<script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    menuToggle.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
-</script>
-
-    <!-- Script Vue.js -->
+    <!-- JavaScript for Mobile Menu Toggle -->
     <script>
-        new Vue({
-            el: '#app',
-            data: {
-                email: '',
-                password: '',
-                rememberMe: false,
-                isMenuOpen: false
-            },
-            methods: {
-                toggleMenu() {
-                    this.isMenuOpen = !this.isMenuOpen;
-                },
-                login() {
-                    // Contoh logika untuk memverifikasi kredensial
-                    const validEmail = 'user@example.com'; // Ganti dengan email valid
-                    const validPassword = 'password123'; // Ganti dengan kata sandi valid
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-                    if (this.email === validEmail && this.password === validPassword) {
-                        alert('Login berhasil! Selamat datang, ' + this.email + '!');
-                        localStorage.setItem('userEmail', this.email); // Simpan email di localStorage
-                        window.location.href = 'index.html'; // Ubah ini ke URL redirect yang diinginkan
-                    } else {
-                        alert('Email atau kata sandi salah. Silakan coba lagi.');
-                    }
-                }
-            }
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
     </script>
-
 </body>
 
 </html>
-
 
   

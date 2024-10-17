@@ -30,23 +30,25 @@
             <a href="contact.html" class="text-gray-800 hover:text-blue-600">Contact</a>
         </nav>
 
-           <!-- Cart & Login (Desktop) -->
-            <div class="hidden md:flex space-x-4">
-                <a href="login.html" class="text-gray-800 hover:text-blue-600">Login</a>
-                <a href="cart.html" class="text-gray-800 hover:text-blue-600 flex items-center">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="ml-1 cart-count">(0)</span>
-                </a>
-            </div>
+        <!-- Cart & Login (Desktop) -->
+        <div class="hidden md:flex space-x-4">
+            <a href="login.html" class="text-gray-800 hover:text-blue-600">Login</a>
+            <a href="cart.html" class="text-gray-800 hover:text-blue-600 flex items-center">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="ml-1 cart-count">(0)</span>
+            </a>
+        </div>
 
-			
-			    <!-- Hamburger Menu Button (Mobile) -->
-            <div class="flex items-center md:hidden">
-                <a href="cart.html" class="text-gray-800 hover:text-blue-600 flex items-center ml-4">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="ml-1 cart-count">(0)</span>
-                </a>
-            </div> 
+        <!-- Hamburger Menu Button (Mobile) -->
+        <div class="flex items-center md:hidden">
+            <button id="menu-toggle" class="text-gray-800 hover:text-blue-600 focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a href="cart.html" class="text-gray-800 hover:text-blue-600 flex items-center ml-4">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="ml-1 cart-count">(0)</span>
+            </a>
+        </div> 
     </div>
 
     <!-- Mobile Navigation Menu -->
@@ -58,7 +60,6 @@
         <a href="login.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100">Login</a>
     </nav>
 </header>
-
 
     <!-- Seksi Login -->
     <section class="container mx-auto py-16 px-4">

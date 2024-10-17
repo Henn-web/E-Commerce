@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Halaman Register untuk Situs E-commerce">
+    <title>Register - Situs E-commerce</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="bg-gray-100 text-gray-800" id="app">
+
+    <!-- Seksi Register -->
+    <section class="container mx-auto py-16 px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">Daftar Akun Baru</h2>
+
+        <div class="max-w-md mx-auto bg-white rounded-lg shadow-lg p-8">
+            <form @submit.prevent="register">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700">Nama</label>
+                    <input type="text" v-model="name" placeholder="Masukkan nama Anda" class="w-full p-3 border border-gray-300 rounded-lg mt-1" required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700">Email</label>
+                    <input type="email" v-model="email" placeholder="Masukkan email Anda" class="w-full p-3 border border-gray-300 rounded-lg mt-1" required>
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="block text-gray-700">Kata Sandi</label>
+                    <input type="password" v-model="password" placeholder="Masukkan kata sandi Anda" class="w-full p-3 border border-gray-300 rounded-lg mt-1" required>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-500 transition">Daftar</button>
+            </form>
+            <p class="text-center text-gray-600 mt-4">Sudah punya akun? <a href="login.html" class="text-blue-600 hover:text-blue-800">Login</a></p>
+        </div>
+    </section>
+
+    <!-- Script Vue.js untuk Penyimpanan di LocalStorage -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                name: '',
+                email: '',
+                password: ''
+            },
+            methods: {
+                register() {
+                    // Simpan data pengguna ke localStorage
+                    const userData = {
+                        name: this.name,
+                        email: this.email,
+                        password: this.password
+                    };
+                    localStorage.setItem('user', JSON.stringify(userData));
+                    alert('Registrasi berhasil! Data Anda telah disimpan.');
+
+                    // Redirect ke halaman login
+                    window.location.href = 'login.html';
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

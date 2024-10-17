@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="User Dashboard for E-commerce Site">
+    <title>User Dashboard - E-Shop</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-lg">
+        <div class="container mx-auto flex justify-between items-center py-4 px-4 md:px-8">
+            <!-- Logo -->
+            <a href="#">
+                <h1 class="text-lg md:text-2xl font-bold text-gray-800">E-Shop</h1>
+            </a>
+
+            <!-- Navigation Links (Desktop) -->
+            <nav class="hidden md:flex space-x-4">
+                <a href="index.html" class="text-gray-800 hover:text-blue-600">Home</a>
+                <a href="shop.html" class="text-gray-800 hover:text-blue-600">Shop</a>
+                <a href="categories.html" class="text-gray-800 hover:text-blue-600">Categories</a>
+                <a href="contact.html" class="text-gray-800 hover:text-blue-600">Contact</a>
+            </nav>
+
+            <!-- Cart & Logout (Desktop) -->
+            <div class="hidden md:flex space-x-4">
+                <a href="logout.html" class="text-gray-800 hover:text-blue-600">Logout</a>
+                <a href="cart.html" class="text-gray-800 hover:text-blue-600 flex items-center">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="ml-1 cart-count">(0)</span>
+                </a>
+            </div>
+
+            <!-- Hamburger Menu Button (Mobile) -->
+            <div class="flex items-center md:hidden">
+                <button id="menu-toggle" class="text-gray-800 hover:text-blue-600 focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="cart.html" class="text-gray-800 hover:text-blue-600 flex items-center ml-4">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="ml-1 cart-count">(0)</span>
+                </a>
+            </div> 
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <nav id="mobile-menu" class="hidden md:hidden flex-col bg-white border-t border-gray-200 p-4">
+            <a href="index.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100">Home</a>
+            <a href="shop.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100">Shop</a>
+            <a href="categories.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100">Categories</a>
+            <a href="contact.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100">Contact</a>
+            <a href="#" onclick="logout()" class="text-gray-800 hover:text-blue-600">Logout</a>
+        </nav>
+    </header>
+
+    <!-- Dashboard Content -->
+    <section class="container mx-auto py-16 px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">User Dashboard</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          
+<!-- Sidebar -->
+<div class="bg-white rounded-lg shadow-lg p-6">
+    <h3 class="text-lg font-bold mb-4">Menu</h3>
+    <ul>
+        <li class="mb-4">
+            <button onclick="window.location.href='profile.html'"
+                class="w-full bg-gray-600 text-white text-center font-bold p-3 rounded-lg hover:bg-gray-700 transition-shadow shadow-md">
+                Profile Settings
+            </button>
+        </li>
+        <li class="mb-4">
+            <button onclick="window.location.href='order-history.html'"
+                class="w-full bg-gray-600 text-white text-center font-bold p-3 rounded-lg hover:bg-gray-700 transition-shadow shadow-md">
+                Order History
+            </button>
+        </li>
+        <li class="mb-4">
+            <button onclick="window.location.href='address-book.html'"
+                class="w-full bg-gray-600 text-white text-center font-bold p-3 rounded-lg hover:bg-gray-700 transition-shadow shadow-md">
+                Address Book
+            </button>
+        </li>
+        <li class="mb-4">
+            <button onclick="window.location.href='wishlist.html'"
+                class="w-full bg-gray-600 text-white text-center font-bold p-3 rounded-lg hover:bg-gray-700 transition-shadow shadow-md">
+                Wishlist
+            </button>
+        </li>
+        <li class="mb-4">
+            <button onclick="window.location.href='notifications.html'"
+                class="w-full bg-gray-600 text-white text-center font-bold p-3 rounded-lg hover:bg-gray-700 transition-shadow shadow-md">
+                Notifications
+            </button>
+        </li>
+    </ul>
+</div>
+
+
+
+
+            <!-- Main Content -->
+            <div class="col-span-3 bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-lg font-bold mb-4">Welcome Back!</h3>
+                <p>Email: <span id="user-email-info"></span></p>
+                <p class="mt-2">Discover the latest offers and products below:</p>
+
+                <!-- Recommended Products -->
+                <h4 class="text-xl font-bold mt-6 mb-4">Recommended Products</h4>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <div class="bg-gray-100 p-4 rounded-lg shadow">
+                        <a href="product1.html">
+                            <img src="https://via.placeholder.com/150" alt="Product 1" class="mb-2">
+                            <h5 class="font-bold">Product 1</h5>
+                            <p class="text-sm text-gray-600">Rp100.000</p>
+                        </a>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded-lg shadow">
+                        <a href="product2.html">
+                            <img src="https://via.placeholder.com/150" alt="Product 2" class="mb-2">
+                            <h5 class="font-bold">Product 2</h5>
+                            <p class="text-sm text-gray-600">Rp200.000</p>
+                        </a>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded-lg shadow">
+                        <a href="product3.html">
+                            <img src="https://via.placeholder.com/150" alt="Product 3" class="mb-2">
+                            <h5 class="font-bold">Product 3</h5>
+                            <p class="text-sm text-gray-600">Rp150.000</p>
+                        </a>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded-lg shadow">
+                        <a href="product4.html">
+                            <img src="https://via.placeholder.com/150" alt="Product 4" class="mb-2">
+                            <h5 class="font-bold">Product 4</h5>
+                            <p class="text-sm text-gray-600">Rp250.000</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+       <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white py-12 mt-12 px-4">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Footer Section 1 -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4">E-Shop</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, nostrum!</p>
+                </div>
+                <!-- Footer Section 2 -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html" class="hover:text-blue-400">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-blue-400">Contact</a></li>
+                        <li><a href="priv.html" class="hover:text-blue-400">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-blue-400">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <!-- Footer Section 3 -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Categories</h3>
+                    <ul>
+                        <li><a href="#" class="hover:text-blue-400">Men</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Women</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Kids</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Accessories</a></li>
+                    </ul>
+                </div>
+                <!-- Footer Section 4 -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Newsletter</h3>
+                    <p>Subscribe to get the latest news and updates.</p>
+                    <input type="email" placeholder="Enter your email" class="w-full mt-4 p-2 rounded-lg text-gray-800">
+                    <button class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-400 transition">
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+            <div class="mt-12 text-center text-gray-400">
+                &copy; 2024 E-Shop. All rights reserved.
+            </div>
+        </div>
+    </footer>
+	
+	<!-- Script Logout -->
+	<script>
+    function logout() {
+        // Menghapus data pengguna dari localStorage
+        localStorage.removeItem('user'); // Ganti 'user' dengan kunci yang kamu gunakan
+        alert('You have logged out.');
+        // Redirect ke halaman login
+        window.location.href = 'login.html';
+    }
+</script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout Confirmation</title>
+    <link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+    <div class="bg-white rounded-lg shadow-lg p-6 max-w-sm text-center">
+        <h2 class="text-lg font-bold mb-4">Are you sure you want to log out?</h2>
+        <div class="flex justify-around">
+            <button id="confirm-logout" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-400">Yes</button>
+            <button onclick="window.history.back();" class="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-400">No</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('confirm-logout').addEventListener('click', function () {
+            // Remove session data (e.g., token or user data) from localStorage
+            localStorage.removeItem('userData'); // Adjust to the name of the data you store
+            // Redirect back to the login page
+            window.location.href = 'login.html';
+        });
+    </script>
+
+</body>
+
+</html>

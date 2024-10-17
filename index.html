@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Halaman Produk E-commerce">
+    <title>Shop - E-Commerce</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+   <!-- Header -->
+<header class="bg-white shadow-lg">
+    <div class="container mx-auto flex justify-between items-center py-4 px-4 md:px-8">
+        <!-- Logo -->
+        <a href="#">
+            <h1 class="text-lg md:text-2xl font-bold text-gray-800">E-Shop</h1>
+        </a>
+
+        <!-- Navigation Links (Desktop) -->
+        <nav class="hidden md:flex space-x-4">
+            <a href="index.html" class="text-gray-800 hover:text-blue-600">Home</a>
+            <a href="shop.html" class="text-gray-800 hover:text-blue-600">Shop</a>
+            <a href="categories.html" class="text-gray-800 hover:text-blue-600">Categories</a>
+            <a href="contact.html" class="text-gray-800 hover:text-blue-600">Contact</a>
+        </nav>
+
+           <!-- Cart & Login (Desktop) -->
+            <div class="hidden md:flex space-x-4">
+                <a href="login.html" class="text-gray-800 hover:text-blue-600">Login</a>
+                <a href="cart.html" class="text-gray-800 hover:text-blue-600 flex items-center">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="ml-1 cart-count">(0)</span>
+                </a>
+            </div>
+
+			
+			    <!-- Hamburger Menu Button (Mobile) -->
+            <div class="flex items-center md:hidden">
+                <a href="cart.html" class="text-gray-800 hover:text-blue-600 flex items-center ml-4">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="ml-1 cart-count">(0)</span>
+                </a>
+            </div> 
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <nav id="mobile-menu" class="hidden md:hidden flex-col bg-white border-t border-gray-200 p-4">
+        <a href="index.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100">Home</a>
+        <a href="shop.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100">Shop</a>
+        <a href="categories.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100">Categories</a>
+        <a href="contact.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100">Contact</a>
+        <a href="login.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100">Login</a>
+    </nav>
+</header>
+
+    <!-- Hero Section -->
+    <section class="bg-blue-600 text-white py-12 md:py-20">
+        <div class="container mx-auto text-center px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Welcome to E-Shop</h2>
+            <p class="mb-8">Find the best products at unbeatable prices!</p>
+            <a href="shop.html" class="bg-white text-blue-600 px-6 py-3 rounded-lg shadow hover:bg-gray-200 transition">
+                Shop Now
+            </a>
+        </div>
+    </section>
+
+   <!-- Product Section -->
+    <section class="container mx-auto py-16 px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">Shop Our Products</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+		
+            <!-- Contoh Produk 1 -->
+            <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                <img src="Cth.png" alt="Product 1" class="w-48 mx-auto mb-4">
+                <h3 class="text-xl font-bold mb-2">Product Name 1</h3>
+                <p class="text-gray-600 mb-4">$29.99</p>
+                <button onclick="addToCart('Product Name 1', 29.99)" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-400 transition">
+                    Add to Cart
+                </button>
+            </div>
+
+            <!-- Contoh Produk 2 -->
+            <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                <img src="Cth.png" alt="Product 2" class="w-48 mx-auto mb-4">
+                <h3 class="text-xl font-bold mb-2">Product Name 2</h3>
+                <p class="text-gray-600 mb-4">$39.99</p>
+                <button onclick="addToCart('Product Name 2', 39.99)" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-400 transition">
+                    Add to Cart
+                </button>
+            </div>
+			
+			 <!-- Contoh Produk 3 -->
+            <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                <img src="Cth.png" alt="Product 2" class="w-48 mx-auto mb-4">
+                <h3 class="text-xl font-bold mb-2">Product Name 3</h3>
+                <p class="text-gray-600 mb-4">$39.99</p>
+                <button onclick="addToCart('Product Name 2', 39.99)" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-400 transition">
+                    Add to Cart
+                </button>
+            </div>
+			
+			<!-- Contoh Produk 4 -->
+            <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                <img src="Cth.png" alt="Product 2" class="w-48 mx-auto mb-4">
+                <h3 class="text-xl font-bold mb-2">Product Name 4</h3>
+                <p class="text-gray-600 mb-4">$39.99</p>
+                <button onclick="addToCart('Product Name 2', 39.99)" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-400 transition">
+                    Add to Cart
+                </button>
+            </div>
+			
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white py-12 mt-12 px-4">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Footer Section 1 -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4">E-Shop</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, nostrum!</p>
+                </div>
+                <!-- Footer Section 2 -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html" class="hover:text-blue-400">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-blue-400">Contact</a></li>
+                        <li><a href="priv.html" class="hover:text-blue-400">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-blue-400">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <!-- Footer Section 3 -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Categories</h3>
+                    <ul>
+                        <li><a href="#" class="hover:text-blue-400">Men</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Women</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Kids</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Accessories</a></li>
+                    </ul>
+                </div>
+                <!-- Footer Section 4 -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Newsletter</h3>
+                    <p>Subscribe to get the latest news and updates.</p>
+                    <input type="email" placeholder="Enter your email" class="w-full mt-4 p-2 rounded-lg text-gray-800">
+                    <button class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-400 transition">
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+            <div class="mt-12 text-center text-gray-400">
+                &copy; 2024 E-Shop. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+	
+	 <!-- Script for Cart Management -->
+    <script>
+        function addToCart(productName, productPrice) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let product = cart.find(item => item.name === productName);
+            if (product) {
+                product.quantity += 1;
+            } else {
+                cart.push({ name: productName, price: productPrice, quantity: 1 });
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('Product added to cart!');
+            updateCartCount();
+        }
+
+        function updateCartCount() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.querySelectorAll('.cart-count').forEach(el => el.textContent = `(${totalItems})`);
+        }
+
+        window.onload = updateCartCount;
+    </script>
+</body>
+
+</html>

@@ -14,56 +14,59 @@
 
 <body class="bg-gray-100 text-gray-800">
 
-  <!-- Header -->
-<header class="bg-white shadow-lg" id="headerApp">
-    <div class="container mx-auto flex justify-between items-center py-4 px-4 md:px-8">
-        <!-- Logo -->
-        <a href="#">
-            <h1 class="text-lg md:text-2xl font-bold text-gray-800">E-Shop</h1>
-        </a>
+    <!-- Header -->
+    <header class="bg-white shadow-lg" id="headerApp">
+        <div class="container mx-auto flex justify-between items-center py-4 px-4 md:px-8">
+            <!-- Logo -->
+            <a href="#">
+                <h1 class="text-lg md:text-2xl font-bold text-gray-800">E-Shop</h1>
+            </a>
 
-        <!-- Navigation Links (Desktop) -->
-        <nav class="hidden md:flex space-x-4">
-            <a href="index.html" class="text-gray-800 hover:text-blue-600">Home</a>
-            <a href="shop.html" class="text-gray-800 hover:text-blue-600">Shop</a>
-            <a href="categories.html" class="text-gray-800 hover:text-blue-600">Categories</a>
-            <a href="contact.html" class="text-gray-800 hover:text-blue-600">Contact</a>
+            <!-- Navigation Links (Desktop) -->
+            <nav class="hidden md:flex space-x-4">
+                <a href="index.html" class="text-gray-800 hover:text-blue-600">Home</a>
+                <a href="shop.html" class="text-gray-800 hover:text-blue-600">Shop</a>
+                <a href="categories.html" class="text-gray-800 hover:text-blue-600">Categories</a>
+                <a href="contact.html" class="text-gray-800 hover:text-blue-600">Contact</a>
+            </nav>
+
+            <!-- Profile Picture & Cart (Desktop) -->
+            <div class="hidden md:flex space-x-4 items-center">
+                <a href="cart.html" class="text-gray-800 hover:text-blue-600 flex items-center">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="ml-1 cart-count">(0)</span>
+                </a>
+
+                <!-- Profile Picture Link -->
+                <a href="dashboard.html" class="flex items-center">
+                    <img src="profile.jpg" alt="Foto Profil" class="w-10 h-10 rounded-full border-2 border-gray-300">
+                </a>
+            </div>
+
+            <!-- Hamburger Menu Button (Mobile) -->
+            <div class="flex items-center md:hidden">
+                <button id="menu-toggle" class="text-gray-800 hover:text-blue-600 focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="cart.html" class="text-gray-800 hover:text-blue-600 flex items-center ml-4">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="ml-1 cart-count">(0)</span>
+                </a>
+                <!-- Profile Picture (Mobile) -->
+                <a href="dashboard.html" class="ml-4">
+                    <img src="profile.jpg" alt="Foto Profil" class="w-8 h-8 rounded-full border-2 border-gray-300">
+                </a>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <nav id="mobile-menu" class="hidden md:hidden flex-col bg-white border-t border-gray-200 p-4">
+            <a href="index.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100">Home</a>
+            <a href="shop.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100">Shop</a>
+            <a href="categories.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100">Categories</a>
+            <a href="contact.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100">Contact</a>
         </nav>
-
-        <!-- Profile Picture & Cart (Desktop) -->
-        <div class="hidden md:flex space-x-4 items-center">
-            <a href="cart.html" class="text-gray-800 hover:text-blue-600 flex items-center">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="ml-1 cart-count">(0)</span>
-            </a>
-
-            <!-- Profile Picture Link -->
-            <a href="dashboard.html" class="flex items-center">
-                <img src="profilePicture" alt="Foto Profil" class="w-10 h-10 rounded-full border-2 border-gray-300">
-            </a>
-        </div>
-
-        <!-- Hamburger Menu Button (Mobile) -->
-        <div class="flex items-center md:hidden">
-            <button id="menu-toggle" class="text-gray-800 hover:text-blue-600 focus:outline-none">
-                <i class="fas fa-bars"></i>
-            </button>
-            <a href="cart.html" class="text-gray-800 hover:text-blue-600 flex items-center ml-4">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="ml-1 cart-count">(0)</span>
-            </a>
-        </div>
-    </div>
-
-    <!-- Mobile Navigation Menu -->
-    <nav id="mobile-menu" class="hidden md:hidden flex-col bg-white border-t border-gray-200 p-4">
-        <a href="index.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100">Home</a>
-        <a href="shop.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100">Shop</a>
-        <a href="categories.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100">Categories</a>
-        <a href="contact.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100">Contact</a>
-        <a href="login.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100">Login</a>
-    </nav>
-</header>
+    </header>
 
     <!-- About Section -->
     <section class="container mx-auto py-16 px-4">
@@ -127,13 +130,35 @@
         </div>
     </footer>
 
-   <!-- JavaScript for Mobile Menu Toggle -->
-<script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
+   <!-- Script JavaScript untuk Menangani Menu Hamburger -->
+    <script>
+        document.getElementById('menu-toggle').onclick = function () {
+            var mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        };
 
-    menuToggle.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
+        // Contoh Fungsi untuk Menambahkan Item ke Keranjang
+        function addToCart(productName, price) {
+            alert(`Added ${productName} to cart for $${price}`);
+        }
+    </script>
+	
+	<!-- Vue.js Script for Header -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        new Vue({
+            el: '#headerApp',
+            data: {
+                profilePicture: 'profile.png' // Ganti dengan jalur gambar fotomu
+            },
+            created() {
+                // Muat gambar profil dari localStorage jika tersedia
+                const userData = JSON.parse(localStorage.getItem('user'));
+                if (userData && userData.profilePicture) {
+                    this.profilePicture = userData.profilePicture;
+                }
+            }
+        });
     });
 </script>
 

@@ -68,45 +68,54 @@
         </nav>
     </header>
 
-   <!-- Categories Section -->
+<!-- Contact Us Section -->
 <section class="container mx-auto py-16 px-4">
-    <h2 class="text-3xl font-bold mb-8 text-center">Shop by Category</h2>
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        <!-- Category Card 1 -->
-        <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
-            <img src="Cth.png" alt="Electronics" class="w-full h-48 object-cover rounded-t-lg">
-            <div class="p-4 text-center">
-                <h3 class="text-lg font-semibold">Electronics</h3>
-                <a href="shop.html" class="text-blue-600 hover:text-blue-800 mt-2 inline-block">Shop Now</a>
+    <h2 class="text-3xl font-bold mb-8 text-center">Contact Us</h2>
+    <div class="flex flex-col md:flex-row md:space-x-8">
+        <!-- Contact Form -->
+        <div class="flex-1 bg-white rounded-lg shadow p-8">
+            <h3 class="text-lg font-semibold mb-4">Get in Touch</h3>
+            <form>
+                <div class="mb-4">
+                    <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                    <input type="text" id="name" class="mt-1 block w-full p-2 border border-gray-300 rounded" required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" id="email" class="mt-1 block w-full p-2 border border-gray-300 rounded" required>
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                    <textarea id="message" rows="4" class="mt-1 block w-full p-2 border border-gray-300 rounded" required></textarea>
+                </div>
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 transition">
+                    Send Message
+                </button>
+            </form>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="flex-1 bg-white rounded-lg shadow p-8 mt-8 md:mt-0">
+            <h3 class="text-lg font-semibold mb-4">Contact Information</h3>
+            <p class="mb-2"><strong>Address:</strong> 123 E-Shop St, Jakarta, Indonesia</p>
+            <p class="mb-2"><strong>Phone:</strong> +62 123 456 7890</p>
+            <p class="mb-2"><strong>Email:</strong> contact@eshop.com</p>
+            <p class="mb-2"><strong>Follow Us:</strong></p>
+            <div class="flex space-x-4">
+                <a href="#" class="text-blue-600 hover:text-blue-800">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="text-blue-600 hover:text-blue-800">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="text-blue-600 hover:text-blue-800">
+                    <i class="fab fa-instagram"></i>
+                </a>
             </div>
         </div>
-        <!-- Category Card 2 -->
-        <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
-            <img src="Cth.png" alt="Fashion" class="w-full h-48 object-cover rounded-t-lg">
-            <div class="p-4 text-center">
-                <h3 class="text-lg font-semibold">Fashion</h3>
-                <a href="shop.html" class="text-blue-600 hover:text-blue-800 mt-2 inline-block">Shop Now</a>
-            </div>
-        </div>
-        <!-- Category Card 3 -->
-        <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
-            <img src="Cth.png" alt="Home" class="w-full h-48 object-cover rounded-t-lg">
-            <div class="p-4 text-center">
-                <h3 class="text-lg font-semibold">Home & Garden</h3>
-                <a href="shop.html" class="text-blue-600 hover:text-blue-800 mt-2 inline-block">Shop Now</a>
-            </div>
-        </div>
-        <!-- Category Card 4 -->
-        <div class="bg-white rounded-lg shadow hover:shadow-lg transition">
-            <img src="Cth.png" alt="Toys" class="w-full h-48 object-cover rounded-t-lg">
-            <div class="p-4 text-center">
-                <h3 class="text-lg font-semibold">Toys & Hobbies</h3>
-                <a href="shop.html" class="text-blue-600 hover:text-blue-800 mt-2 inline-block">Shop Now</a>
-            </div>
-        </div>
-        <!-- Add more category cards as needed -->
     </div>
 </section>
+
 
 
     <!-- Footer Section -->
@@ -118,7 +127,7 @@
                     <h3 class="font-bold text-lg mb-4">E-Shop</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, nostrum!</p>
                 </div>
-              <!-- Footer Section 2 -->
+                <!-- Footer Section 2 -->
                 <div>
                     <h3 class="font-bold text-lg mb-4">Quick Links</h3>
                     <ul>
@@ -143,7 +152,7 @@
                     <h3 class="font-bold text-lg mb-4">Newsletter</h3>
                     <p>Subscribe to get the latest news and updates.</p>
                     <input type="email" placeholder="Enter your email" class="w-full mt-4 p-2 rounded-lg text-gray-800">
-                    <button class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-400 transition">
+                    <button class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-500 transition">
                         Subscribe
                     </button>
                 </div>
@@ -154,7 +163,7 @@
         </div>
     </footer>
 
-<!-- Script JavaScript untuk Menangani Menu Hamburger -->
+  <!-- Script JavaScript untuk Menangani Menu Hamburger -->
     <script>
         document.getElementById('menu-toggle').onclick = function () {
             var mobileMenu = document.getElementById('mobile-menu');
@@ -185,7 +194,6 @@
         });
     });
 </script>
-
 
     <!-- Script for Cart Management -->
     <script>
@@ -233,7 +241,6 @@
                     if (this.email === validEmail && this.password === validPassword) {
                         alert('Login berhasil! Selamat datang, ' + this.email + '!');
                         localStorage.setItem('userEmail', this.email); // Simpan email di localStorage
-                        localStorage.setItem('isLoggedIn', true); // Tandai pengguna sudah login
                         window.location.href = 'index.html'; // Ubah ini ke URL redirect yang diinginkan
                     } else {
                         alert('Email atau kata sandi salah. Silakan coba lagi.');
@@ -246,3 +253,4 @@
 </body>
 
 </html>
+
